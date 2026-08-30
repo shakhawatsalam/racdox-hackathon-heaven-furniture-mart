@@ -1,0 +1,81 @@
+.social-proof {
+  position: relative;
+  width: 100vw;
+  background-color: var(--ivory);
+  padding: 8rem 0;
+}
+
+.social-proof-inner {
+  display: flex;
+  align-items: center;
+  gap: 4.5rem;
+}
+
+.social-proof-img {
+  flex: 1;
+  aspect-ratio: 4/5;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: var(--ivory-dim);
+}
+
+.social-proof-copy {
+  flex: 1.2;
+}
+
+.social-proof-mark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--brass);
+  margin-bottom: 0.5rem;
+}
+
+.social-proof-quote {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+
+.social-proof-attribution {
+  margin-bottom: 2.5rem;
+}
+
+.social-proof-name {
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+.social-proof-title {
+  font-size: 0.9rem;
+  color: var(--walnut);
+}
+
+.social-proof-stat {
+  color: var(--brass);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ivory-dim);
+}
+
+@media (max-width: 1000px) {
+  .social-proof {
+    padding: 5rem 0;
+  }
+
+  .social-proof-inner {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .social-proof-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+
+  .social-proof-mark {
+    font-size: 3.5rem;
+  }
+}

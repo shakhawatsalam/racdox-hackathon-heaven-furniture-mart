@@ -1,5 +1,12 @@
+import BespokeHighlight from "@/components/BespokeHighlight/BespokeHighlight";
+import BrandIntro from "@/components/Brandintro/Brandintro";
+import CollectionsSnapshot from "@/components/CollectionCard/CollectionsSnapshot";
+import CTAWindow from "@/components/Ctawindow/Ctawindow";
+import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
 import Nav from "@/components/Nav/Nav";
+import SocialProof from "@/components/SocialProof/Socialproof";
+import WhyHeaven from "@/components/WhyHeaven/WhyHeaven";
 
 export default function Home() {
   return (
@@ -7,20 +14,14 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <section id='intro'>{/* Brand Intro — step: pending */}</section>
-        <section id='why-heaven'>
-          {/* Why Choose Heaven — step: pending */}
-        </section>
-        <section id='collections'>
-          {/* Collections Snapshot — step: pending */}
-        </section>
-        <section id='bespoke'>
-          {/* Bespoke Highlight / signature scroll sequence — step: pending */}
-        </section>
-        <section id='proof'>{/* Social Proof — step: pending */}</section>
-        <section id='cta'>{/* CTA Window — step: pending */}</section>
+        <BrandIntro />
+        <WhyHeaven />
+        <CollectionsSnapshot />
+        <BespokeHighlight />
+        <SocialProof />
+        <CTAWindow />
       </main>
-      {/* Footer — step: pending */}
+      <Footer />
     </>
   );
 }

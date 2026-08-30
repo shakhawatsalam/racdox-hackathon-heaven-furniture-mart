@@ -1,0 +1,67 @@
+.why-heaven {
+  position: relative;
+  width: 100vw;
+  background-color: var(--ink);
+  color: var(--ivory);
+  padding: 7rem 0 8rem 0;
+}
+
+.why-heaven-eyebrow {
+  color: var(--tan);
+  margin-bottom: 3rem;
+  display: block;
+}
+
+.why-heaven-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem;
+}
+
+.why-heaven-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(244, 241, 234, 0.12);
+}
+
+.why-heaven-icon {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(184, 145, 46, 0.4);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: var(--brass);
+}
+
+.why-heaven-text h3 {
+  font-size: 1.15rem;
+  color: var(--ivory);
+  margin-bottom: 0.4rem;
+}
+
+.why-heaven-text p {
+  color: var(--ivory-70);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .why-heaven {
+    padding: 5rem 0 6rem 0;
+  }
+
+  .why-heaven-list {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .why-heaven-row {
+    padding: 1.5rem 0;
+  }
+}

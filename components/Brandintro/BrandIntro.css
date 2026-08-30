@@ -1,0 +1,30 @@
+.brand-intro {
+  position: relative;
+  width: 100vw;
+  background-color: var(--ivory);
+  padding: 8rem 0;
+}
+
+.brand-intro-inner {
+  max-width: 46rem;
+}
+
+.brand-intro-eyebrow {
+  color: var(--brass);
+  margin-bottom: 1.5rem;
+}
+
+.brand-intro h2 {
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+
+.brand-intro-copy {
+  color: var(--walnut);
+}
+
+@media (max-width: 1000px) {
+  .brand-intro {
+    padding: 5rem 0;
+  }
+}

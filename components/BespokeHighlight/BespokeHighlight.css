@@ -1,0 +1,156 @@
+.bespoke-highlight {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  background-color: var(--ink);
+  color: var(--ivory);
+}
+
+.bespoke-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.bespoke-col {
+  flex: 1;
+}
+
+.bespoke-eyebrow {
+  color: var(--tan);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.bespoke-heading {
+  color: var(--ivory);
+  margin-bottom: 3rem;
+}
+
+.bespoke-track {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.bespoke-track-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bespoke-track-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ivory-40);
+  transition: color 0.3s ease;
+}
+
+.bespoke-track-line {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(244, 241, 234, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bespoke-track-item.active .bespoke-track-label {
+  color: var(--brass);
+}
+
+.bespoke-track-item.active .bespoke-track-line {
+  background-color: var(--brass);
+}
+
+.bespoke-stage-copy {
+  min-height: 9rem;
+}
+
+.bespoke-stage-copy h3 {
+  color: var(--ivory);
+  margin-bottom: 1rem;
+}
+
+.bespoke-stage-copy p {
+  color: var(--ivory-70);
+  max-width: 26rem;
+}
+
+.bespoke-visual {
+  position: relative;
+  height: 70%;
+}
+
+.bespoke-visual-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: var(--ink-soft);
+}
+
+.bespoke-stage-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.bespoke-stage-img:first-child {
+  opacity: 1;
+}
+
+.bespoke-mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .bespoke-highlight {
+    height: auto;
+    padding: 5rem 0;
+  }
+
+  .bespoke-inner {
+    display: none;
+  }
+
+  .bespoke-mobile {
+    display: block;
+  }
+
+  .bespoke-mobile .bespoke-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .bespoke-mobile-card {
+    margin-bottom: 3rem;
+  }
+
+  .bespoke-mobile-img {
+    aspect-ratio: 4/3;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+
+  .bespoke-mobile-card .bespoke-track-label {
+    color: var(--brass);
+  }
+
+  .bespoke-mobile-card h3 {
+    color: var(--ivory);
+    margin: 0.5rem 0 0.75rem 0;
+  }
+
+  .bespoke-mobile-card p {
+    color: var(--ivory-70);
+  }
+}
