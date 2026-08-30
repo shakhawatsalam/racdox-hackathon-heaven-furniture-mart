@@ -1,0 +1,88 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  padding: 1.5rem 0;
+  transition:
+    background-color 0.4s ease,
+    padding 0.4s ease,
+    backdrop-filter 0.4s ease;
+}
+
+.nav-scrolled {
+  padding: 1rem 0;
+  background-color: rgba(30, 43, 44, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ivory);
+  letter-spacing: -0.01em;
+}
+
+.nav-logo span {
+  color: var(--brass);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ivory-70);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--ivory);
+}
+
+.nav-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  background-color: var(--brass);
+  padding: 0.7rem 1.4rem;
+  border-radius: 3rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-cta:hover {
+  background-color: var(--ivory);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-inner {
+    padding: 0;
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+  }
+
+  .nav-cta {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.75rem;
+  }
+}
