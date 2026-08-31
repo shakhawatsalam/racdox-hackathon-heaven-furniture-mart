@@ -11,7 +11,7 @@ import WhyHeaven from "@/components/WhyHeaven/WhyHeaven";
 export default function Home() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <main>
         <Hero />
         <BrandIntro />

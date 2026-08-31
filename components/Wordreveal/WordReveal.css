@@ -1,0 +1,4 @@
+.word-reveal-word {
+  display: inline-block;
+  will-change: opacity;
+}
