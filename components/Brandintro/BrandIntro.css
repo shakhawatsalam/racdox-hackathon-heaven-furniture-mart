@@ -12,6 +12,7 @@
 .brand-intro-eyebrow {
   color: var(--brass);
   margin-bottom: 1.5rem;
+  font-size: 30px !important;
 }
 
 .brand-intro h2 {

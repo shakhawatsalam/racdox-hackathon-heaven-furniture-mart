@@ -14,6 +14,7 @@ type WordRevealProps = {
   start?: string;
   end?: string;
   dimOpacity?: number;
+  markers?: boolean;
 };
 
 const WordReveal = ({
@@ -23,6 +24,7 @@ const WordReveal = ({
   start = "top 80%",
   end = "bottom 40%",
   dimOpacity = 0.18,
+  markers = false,
 }: WordRevealProps) => {
   const containerRef = useRef<HTMLElement>(null);
   const words = text.split(" ");
@@ -31,9 +33,8 @@ const WordReveal = ({
     () => {
       if (!containerRef.current) return;
 
-      const wordEls = containerRef.current.querySelectorAll<HTMLElement>(
-        ".word-reveal-word"
-      );
+      const wordEls =
+        containerRef.current.querySelectorAll<HTMLElement>(".word-reveal-word");
       gsap.set(wordEls, { opacity: dimOpacity });
 
       const total = wordEls.length;
@@ -42,6 +43,7 @@ const WordReveal = ({
         trigger: containerRef.current,
         start,
         end,
+        markers,
         scrub: true,
         onUpdate: (self) => {
           const progress = self.progress;
@@ -67,7 +69,7 @@ const WordReveal = ({
 
       return () => trigger.kill();
     },
-    { scope: containerRef, dependencies: [text, start, end, dimOpacity] }
+    { scope: containerRef, dependencies: [text, start, end, dimOpacity] },
   );
 
   return (
@@ -75,7 +77,7 @@ const WordReveal = ({
     <Tag ref={containerRef} className={className}>
       {words.map((word, index) => (
         <Fragment key={index}>
-          <span className="word-reveal-word">{word}</span>
+          <span className='word-reveal-word'>{word}</span>
           {index < words.length - 1 ? " " : ""}
         </Fragment>
       ))}
