@@ -22,28 +22,28 @@ const STAGES: Stage[] = [
     title: "Raw Materials",
     description:
       "Every piece begins with premium wood, selected and prepared by hand before a single cut is made.",
-    image: "/assets/about-cta-window.jpg",
+    image: "/assets/step1v2.png",
   },
   {
     label: "Stage 02",
     title: "Framing",
     description:
       "The frame takes shape. Precise joinery holds every proportion true to the original design.",
-    image: "/assets/about-cta-window.jpg",
+    image: "/assets/step2v2.png",
   },
   {
     label: "Stage 03",
     title: "Finishing",
     description:
       "Upholstery, polish, and stain bring texture, tone, and the final character to the piece.",
-    image: "/assets/about-cta-window.jpg",
+    image: "/assets/step3v2.png",
   },
   {
     label: "Stage 04",
     title: "Delivered & Installed",
     description:
       "The finished piece arrives at your home, installed and ready to be lived with.",
-    image: "/assets/about-cta-window.jpg",
+    image: "/assets/step4v2.png",
   },
 ];
 

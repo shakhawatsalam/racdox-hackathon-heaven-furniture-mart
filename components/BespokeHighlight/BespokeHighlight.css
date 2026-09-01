@@ -102,6 +102,7 @@
   height: 100%;
   transform-origin: center center;
   will-change: transform;
+  /* object-fit:; */
 }
 
 .bespoke-base-img {

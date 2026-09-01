@@ -15,7 +15,6 @@ const BrandIntro = () => {
           text='A bespoke furniture and interior styling studio, working out of our Agrabad showroom in Chattogram.'
           start='top 70%'
           end='bottom 70%'
-          markers
         />
         <WordReveal
           as='p'
@@ -23,7 +22,6 @@ const BrandIntro = () => {
           text='We design and craft furniture around what a customer actually wants, not what happens to be on a shelf. Every sofa, bed, dining set, and workspace piece is built to your space, your size, and your taste — then delivered and installed with care.'
           start='top 70%'
           end='bottom 70%'
-          // markers
         />
       </div>
     </section>
