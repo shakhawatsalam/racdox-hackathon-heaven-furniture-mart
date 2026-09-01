@@ -100,11 +100,56 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
+  transform-origin: center center;
+  will-change: transform;
 }
 
-.bespoke-stage-img:first-child {
-  opacity: 1;
+.bespoke-base-img {
+  z-index: 0;
+}
+
+.bespoke-strip-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bespoke-strip {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(100% 0 0 0);
+  will-change: clip-path;
+}
+
+.bespoke-strip img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.bespoke-stage-copy-mask {
+  position: relative;
+  overflow: hidden;
+}
+
+.bespoke-stage-copy-mask h3 {
+  position: relative;
+  will-change: transform;
+}
+
+.bespoke-stage-copy-mask-desc {
+  min-height: 5.5rem;
+}
+
+.bespoke-stage-copy-mask-desc p {
+  position: relative;
+  will-change: transform;
 }
 
 .bespoke-mobile {
