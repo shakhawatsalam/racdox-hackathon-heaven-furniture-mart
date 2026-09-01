@@ -3,33 +3,99 @@
   width: 100vw;
   background-color: var(--ink);
   color: var(--ivory);
-  padding: 7rem 0 8rem 0;
+  padding: 5rem 0;
+}
+
+.why-heaven-header {
+  max-width: 40rem;
+  margin: 0 auto 4.5rem auto;
+  text-align: center;
 }
 
 .why-heaven-eyebrow {
-  color: var(--tan);
-  margin-bottom: 3rem;
+  color: var(--brass);
+  margin-bottom: 1.25rem;
   display: block;
 }
 
-.why-heaven-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 4rem;
+.why-heaven-heading {
+  color: var(--ivory);
+  margin-bottom: 1.5rem;
 }
 
-.why-heaven-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid rgba(244, 241, 234, 0.12);
+.why-heaven-heading span {
+  color: var(--brass);
+  font-style: italic;
+}
+
+.why-heaven-subheading {
+  color: var(--ivory-70);
+}
+
+.why-heaven-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 1.25rem; */
+  margin-bottom: 3.5rem;
+}
+
+.why-heaven-card {
+  border: 0.1px solid rgba(244, 241, 234, 0.12);
+  padding: 2.25rem 2rem;
+  height: 100%;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.why-heaven-card:hover {
+  border-color: rgba(184, 145, 46, 0.4);
+  background-color: rgba(244, 241, 234, 0.03);
 }
 
 .why-heaven-icon {
-  flex-shrink: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(184, 145, 46, 0.12);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: var(--brass);
+  margin-bottom: 1.5rem;
+}
+
+.why-heaven-card h3 {
+  font-size: 1.2rem;
+  color: var(--ivory);
+  margin-bottom: 0.6rem;
+}
+
+.why-heaven-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ivory-70);
+}
+
+.why-heaven-trustbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(244, 241, 234, 0.12);
+}
+
+.why-heaven-trustbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.why-heaven-trustbar-icon {
   width: 2.75rem;
   height: 2.75rem;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,29 +105,46 @@
   color: var(--brass);
 }
 
-.why-heaven-text h3 {
-  font-size: 1.15rem;
+.why-heaven-trustbar-left p {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   color: var(--ivory);
-  margin-bottom: 0.4rem;
 }
 
-.why-heaven-text p {
-  color: var(--ivory-70);
-  font-size: 0.95rem;
-  line-height: 1.5;
+.why-heaven-trustbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brass);
+  flex-shrink: 0;
 }
 
 @media (max-width: 1000px) {
   .why-heaven {
-    padding: 5rem 0 6rem 0;
+    padding: 5rem 0;
   }
 
-  .why-heaven-list {
+  .why-heaven-header {
+    margin-bottom: 3rem;
+  }
+
+  .why-heaven-grid {
     grid-template-columns: 1fr;
-    column-gap: 0;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
   }
 
-  .why-heaven-row {
-    padding: 1.5rem 0;
+  .why-heaven-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .why-heaven-trustbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
   }
 }
