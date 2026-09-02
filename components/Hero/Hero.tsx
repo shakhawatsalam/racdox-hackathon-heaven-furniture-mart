@@ -12,7 +12,7 @@ const Hero = () => {
     <section id='hero' className='hero' ref={heroRef}>
       <div className='hero-bg'>
         <img
-          src='/assets/about-cta-window.jpg'
+          src='/assets/about-cta-window.png'
           alt='Heaven Furniture Mart showroom'
         />
       </div>
