@@ -178,10 +178,8 @@ const CollectionsSnapshot = () => {
           <Reveal key={collection.name}>
             <div className='collection-mobile-card'>
               <div className='collection-mobile-img'>
-                <img src={collection.image} alt={collection.name} />
+                <img src={collection.backImg} alt={collection.name} />
               </div>
-              <h3>{collection.name}</h3>
-              <p>{collection.detail}</p>
             </div>
           </Reveal>
         ))}

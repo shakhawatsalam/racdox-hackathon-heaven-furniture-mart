@@ -147,96 +147,101 @@ const BespokeHighlight = () => {
   useGSAP(
     () => {
       if (!sectionRef.current) return;
-      if (window.innerWidth <= 1000) return;
 
-      const transitionCount = STAGES.length - 1;
+      const media = gsap.matchMedia();
 
-      // Every overlay stage's strips start fully closed.
-      stripRefs.current.forEach((strips) => {
-        if (!strips) return;
-        strips.forEach((strip, stripIndex) => {
-          gsap.set(strip, {
-            clipPath: closedClip(STRIP_BOUNDS[stripIndex].lower),
+      media.add("(min-width: 1001px)", () => {
+        const transitionCount = STAGES.length - 1;
+
+        // Every overlay stage's strips start fully closed.
+        stripRefs.current.forEach((strips) => {
+          if (!strips) return;
+          strips.forEach((strip, stripIndex) => {
+            gsap.set(strip, {
+              clipPath: closedClip(STRIP_BOUNDS[stripIndex].lower),
+            });
           });
+        });
+
+        let lastImageProgress = 0;
+
+        ScrollTrigger.create({
+          trigger: sectionRef.current,
+          start: "top top",
+          end: `+=${window.innerHeight * transitionCount * 1.3}px`,
+          pin: true,
+          pinSpacing: true,
+          scrub: 0.6,
+          onUpdate: (self) => {
+            const raw = self.progress * transitionCount;
+            const currentIndex = Math.min(Math.floor(raw), transitionCount - 1);
+            const localProgress = Math.min(1, raw - currentIndex);
+            const direction = raw > lastImageProgress ? "down" : "up";
+            lastImageProgress = raw;
+
+            // Base image (stage 0) scale settle.
+            if (baseImgRef.current) {
+              baseImgRef.current.style.transform = `scale(${scaleForStage(
+                0,
+                currentIndex,
+                localProgress,
+              )})`;
+            }
+
+            // Overlay stages (1..N-1), each revealed via its own transition.
+            for (let i = 1; i < STAGES.length; i++) {
+              const transitionIndex = i - 1;
+              const strips = stripRefs.current[i];
+              const overlayImgs = overlayImgRefs.current[i];
+              if (!strips || !overlayImgs) continue;
+
+              const scale = scaleForStage(i, currentIndex, localProgress);
+              overlayImgs.forEach((img) => {
+                img.style.transform = `scale(${scale})`;
+              });
+
+              if (transitionIndex < currentIndex) {
+                strips.forEach((strip, stripIndex) => {
+                  const { lower, upper } = STRIP_BOUNDS[stripIndex];
+                  strip.style.clipPath = openClip(lower, upper);
+                });
+              } else if (transitionIndex === currentIndex) {
+                strips.forEach((strip, stripIndex) => {
+                  const { lower, upper } = STRIP_BOUNDS[stripIndex];
+                  const stripDelay = (stripIndex / STRIPS_COUNT) * 0.5;
+                  const adjusted = Math.max(
+                    0,
+                    Math.min(1, (localProgress - stripDelay) * 2),
+                  );
+                  const currentUpper = lower - (lower - upper) * adjusted;
+                  strip.style.clipPath = openClip(lower, currentUpper);
+                });
+              } else {
+                strips.forEach((strip, stripIndex) => {
+                  strip.style.clipPath = closedClip(
+                    STRIP_BOUNDS[stripIndex].lower,
+                  );
+                });
+              }
+            }
+
+            // Title/description swap — threshold-based, direction-aware.
+            const targetIndex =
+              localProgress >= TITLE_CHANGE_THRESHOLD
+                ? Math.min(currentIndex + 1, STAGES.length - 1)
+                : currentIndex;
+
+            if (targetIndex !== activeStageRef.current) {
+              queuedIndex.current = targetIndex;
+              if (!isAnimatingText.current) {
+                animateTextChange(targetIndex, direction);
+              }
+            }
+          },
         });
       });
 
-      let lastImageProgress = 0;
-
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: `+=${window.innerHeight * transitionCount * 1.3}px`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 0.6,
-        onUpdate: (self) => {
-          const raw = self.progress * transitionCount;
-          const currentIndex = Math.min(Math.floor(raw), transitionCount - 1);
-          const localProgress = Math.min(1, raw - currentIndex);
-          const direction = raw > lastImageProgress ? "down" : "up";
-          lastImageProgress = raw;
-
-          // Base image (stage 0) scale settle.
-          if (baseImgRef.current) {
-            baseImgRef.current.style.transform = `scale(${scaleForStage(
-              0,
-              currentIndex,
-              localProgress,
-            )})`;
-          }
-
-          // Overlay stages (1..N-1), each revealed via its own transition.
-          for (let i = 1; i < STAGES.length; i++) {
-            const transitionIndex = i - 1;
-            const strips = stripRefs.current[i];
-            const overlayImgs = overlayImgRefs.current[i];
-            if (!strips || !overlayImgs) continue;
-
-            const scale = scaleForStage(i, currentIndex, localProgress);
-            overlayImgs.forEach((img) => {
-              img.style.transform = `scale(${scale})`;
-            });
-
-            if (transitionIndex < currentIndex) {
-              strips.forEach((strip, stripIndex) => {
-                const { lower, upper } = STRIP_BOUNDS[stripIndex];
-                strip.style.clipPath = openClip(lower, upper);
-              });
-            } else if (transitionIndex === currentIndex) {
-              strips.forEach((strip, stripIndex) => {
-                const { lower, upper } = STRIP_BOUNDS[stripIndex];
-                const stripDelay = (stripIndex / STRIPS_COUNT) * 0.5;
-                const adjusted = Math.max(
-                  0,
-                  Math.min(1, (localProgress - stripDelay) * 2),
-                );
-                const currentUpper = lower - (lower - upper) * adjusted;
-                strip.style.clipPath = openClip(lower, currentUpper);
-              });
-            } else {
-              strips.forEach((strip, stripIndex) => {
-                strip.style.clipPath = closedClip(
-                  STRIP_BOUNDS[stripIndex].lower,
-                );
-              });
-            }
-          }
-
-          // Title/description swap — threshold-based, direction-aware.
-          const targetIndex =
-            localProgress >= TITLE_CHANGE_THRESHOLD
-              ? Math.min(currentIndex + 1, STAGES.length - 1)
-              : currentIndex;
-
-          if (targetIndex !== activeStageRef.current) {
-            queuedIndex.current = targetIndex;
-            if (!isAnimatingText.current) {
-              animateTextChange(targetIndex, direction);
-            }
-          }
-        },
-      });
+      return () => media.revert();
     },
     { scope: sectionRef },
   );

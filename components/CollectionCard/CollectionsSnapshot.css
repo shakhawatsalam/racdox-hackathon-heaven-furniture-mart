@@ -154,6 +154,13 @@
   margin-bottom: 2.5rem;
 }
 
+@media (min-width: 1001px) and (max-width: 1200px) {
+  .collection-fan-card {
+    width: 220px;
+    height: 340px;
+  }
+}
+
 @media (max-width: 1000px) {
   .collections-cards {
     display: none;
@@ -161,7 +168,7 @@
 
   .collections-mobile {
     display: block;
-    padding: 5rem 0;
+    padding: 5rem 1.25rem;
   }
 
   .collection-mobile-card {
