@@ -73,7 +73,6 @@ const WordReveal = ({
   );
 
   return (
-    // @ts-expect-error — Tag is a dynamic element type
     <Tag ref={containerRef} className={className}>
       {words.map((word, index) => (
         <Fragment key={index}>
