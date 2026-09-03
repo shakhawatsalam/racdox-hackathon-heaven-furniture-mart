@@ -42,6 +42,13 @@ const PageReveal = ({ children }: { children: ReactNode }) => {
       return;
     }
 
+    if (window.innerWidth <= 1000) {
+      preloaderRef.current.style.display = "none";
+      pageRef.current.style.clipPath = "none";
+      document.body.style.overflow = "";
+      return;
+    }
+
     const logoChars =
       preloaderRef.current.querySelectorAll<HTMLElement>(".preloader-char");
     const taglineWords =
