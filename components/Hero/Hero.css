@@ -120,11 +120,16 @@
 
 @media (max-width: 1000px) {
   .hero {
-    height: 200svh;
-    min-height: 760px;
+    height: 100svh;
+    min-height: 640px;
+  }
+
+  .hero-gradient {
+    height: 100%;
   }
 
   .hero-top {
+    height: 100%;
     padding-bottom: 2.5rem;
   }
 

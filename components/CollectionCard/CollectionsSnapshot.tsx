@@ -20,26 +20,26 @@ const COLLECTIONS: Collection[] = [
   {
     name: "Living Room",
     detail: "Sofas · Coffee tables · TV units · Consoles",
-    image: "/assets/logohaven.jpg",
-    backImg: "/assets/image01b.png",
+    image: "/assets/logohaven.webp",
+    backImg: "/assets/image01b.webp",
   },
   {
     name: "Bedroom",
     detail: "Beds · Wardrobes · Dressing tables · Bedside tables",
-    image: "/assets/logohaven.jpg",
-    backImg: "/assets/image02b.png",
+    image: "/assets/logohaven.webp",
+    backImg: "/assets/image02b.webp",
   },
   {
     name: "Dining",
     detail: "Dining tables · Dining chairs · Cabinets",
-    image: "/assets/logohaven.jpg",
-    backImg: "/assets/image03b.png",
+    image: "/assets/logohaven.webp",
+    backImg: "/assets/image03b.webp",
   },
   {
     name: "Bespoke",
     detail: "Built to your own space, size, and taste",
-    image: "/assets/logohaven.jpg",
-    backImg: "/assets/image04b.png",
+    image: "/assets/logohaven.webp",
+    backImg: "/assets/image04b.webp",
   },
 ];
 
@@ -157,11 +157,6 @@ const CollectionsSnapshot = () => {
                     alt={collection.name}
                     className='flip-card-back-img'
                   />
-                  {/* <div className='flip-card-back-overlay' />
-                  <div className='flip-card-back-text'>
-                    <h3>{collection.name}</h3>
-                    <p>{collection.detail}</p>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -178,10 +173,8 @@ const CollectionsSnapshot = () => {
           <Reveal key={collection.name}>
             <div className='collection-mobile-card'>
               <div className='collection-mobile-img'>
-                <img src={collection.image} alt={collection.name} />
+                <img src={collection.backImg} alt={collection.name} />
               </div>
-              <h3>{collection.name}</h3>
-              <p>{collection.detail}</p>
             </div>
           </Reveal>
         ))}

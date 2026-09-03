@@ -32,6 +32,7 @@ const Nav = () => {
             alt='Heaven Furniture Mart Logo'
             width={100}
             height={100}
+            loading='eager'
           />
         </a>
 

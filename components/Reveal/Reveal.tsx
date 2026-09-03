@@ -20,6 +20,8 @@ const Reveal = ({ children, delay = 0, y = 32, as = "div" }: RevealProps) => {
     () => {
       if (!ref.current) return;
 
+      if (window.matchMedia("(max-width: 1000px)").matches) return;
+
       gsap.set(ref.current, { opacity: 0, y });
 
       ScrollTrigger.create({

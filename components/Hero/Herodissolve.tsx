@@ -9,7 +9,7 @@ import { vertexShader, fragmentShader } from "../../lib/Shaders";
 gsap.registerPlugin(ScrollTrigger);
 
 type HeroDissolveProps = {
-  containerRef: RefObject<HTMLElement>;
+  containerRef: RefObject<HTMLElement | null>;
   color?: string;
   spread?: number;
 };
@@ -34,15 +34,34 @@ const HeroDissolve = ({
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
-    if (!canvas || !container) return;
+    if (
+      !canvas ||
+      !container ||
+      window.matchMedia("(max-width: 1000px)").matches
+    ) {
+      return;
+    }
 
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: false,
-    });
+    let renderer: THREE.WebGLRenderer;
+
+    try {
+      const context =
+        canvas.getContext("webgl2", { alpha: true, antialias: false }) ||
+        canvas.getContext("webgl", { alpha: true, antialias: false });
+
+      if (!context) return;
+
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        context,
+        alpha: true,
+        antialias: false,
+      });
+    } catch {
+      return;
+    }
 
     const material = new THREE.ShaderMaterial({
       vertexShader,
