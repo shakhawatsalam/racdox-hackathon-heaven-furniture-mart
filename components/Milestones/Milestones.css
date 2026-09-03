@@ -1,0 +1,126 @@
+.milestones {
+  position: relative;
+  width: 100vw;
+  background-color: var(--ivory);
+  padding: 8rem 0;
+}
+
+.milestones-header {
+  max-width: 34rem;
+  margin-bottom: 4.5rem;
+}
+
+.milestones-eyebrow {
+  color: var(--brass);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.milestones-heading {
+  color: var(--ink);
+}
+
+.milestones-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.milestones-line {
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(74, 59, 49, 0.18);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.milestone-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.milestone-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background-color: var(--brass);
+  margin-bottom: 0.75rem;
+  z-index: 1;
+}
+
+.milestone-year {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brass);
+  letter-spacing: 0.02em;
+}
+
+.milestone-item h3 {
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.milestone-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--walnut);
+}
+
+@media (max-width: 1000px) {
+  .milestones {
+    padding: 5rem 0;
+  }
+
+  .milestones-header {
+    margin-bottom: 3rem;
+  }
+
+  .milestones-timeline {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .milestones-line {
+    top: 0;
+    left: 0.3rem;
+    right: auto;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(74, 59, 49, 0.18);
+    transform-origin: top center;
+  }
+
+  .milestone-item {
+    position: relative;
+    display: block;
+    padding-left: 1.75rem;
+  }
+
+  .milestone-dot {
+    position: absolute;
+    top: 0.3rem;
+    left: 0;
+    margin-bottom: 0;
+  }
+
+  .milestone-year {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .milestone-item h3 {
+    display: inline;
+  }
+
+  .milestone-desc {
+    display: block;
+    margin-top: 0.35rem;
+  }
+}

@@ -24,10 +24,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: clip;
 }
 
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 body {

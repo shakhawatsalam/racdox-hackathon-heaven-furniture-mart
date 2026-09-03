@@ -1,10 +1,11 @@
 .hero {
   position: relative;
   width: 100vw;
-  height: 100svh;
-  min-height: 640px;
+  height: 130svh;
+  min-height: 900px;
   overflow: hidden;
   background-color: var(--ink);
+  /* border: 1px solid red; */
 }
 
 .hero-bg {
@@ -20,22 +21,28 @@
 
 .hero-gradient {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120svh;
   background: linear-gradient(
-    0deg,
-    rgba(30, 43, 44, 0.92) 0%,
-    rgba(30, 43, 44, 0.35) 45%,
-    rgba(30, 43, 44, 0.15) 100%
+    90deg,
+    rgba(30, 43, 44, 0.55) 50%,
+    rgba(30, 43, 44, 0) 100%
   );
 }
 
-.hero-content {
+.hero-top {
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 4.5rem;
+  height: 75svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 4.5rem;
   color: var(--ivory);
-  max-width: 46rem;
 }
 
 .hero-eyebrow {
@@ -43,9 +50,13 @@
   margin-bottom: 1.25rem;
 }
 
-.hero-content h1 {
+.hero-top h1 {
   color: var(--ivory);
   margin-bottom: 2rem;
+  max-width: 46rem;
+}
+.hero-top h1 > span {
+  color: var(--brass);
 }
 
 .hero-actions {
@@ -55,12 +66,16 @@
 }
 
 .hero-cta {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--ink);
   background-color: var(--brass);
-  padding: 0.9rem 1.8rem;
-  border-radius: 3rem;
+  padding: 1rem 2.5rem;
+  /* border-radius: 3rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
@@ -75,8 +90,8 @@
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--ivory-70);
-  border-bottom: 1px solid var(--ivory-40);
-  padding-bottom: 0.2rem;
+  padding: 0.9rem 2.4rem;
+  border: 1px solid var(--ivory-40);
   transition:
     color 0.3s ease,
     border-color 0.3s ease;
@@ -87,15 +102,44 @@
   border-color: var(--ivory);
 }
 
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70svh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-reveal-heading {
+  color: var(--ink);
+  max-width: 40rem;
+  font-weight: 400;
+}
+
 @media (max-width: 1000px) {
-  .hero-content {
-    bottom: 2.5rem;
-    max-width: 100%;
+  .hero {
+    height: 100svh;
+    min-height: 640px;
+  }
+
+  .hero-gradient {
+    height: 100%;
+  }
+
+  .hero-top {
+    height: 100%;
+    padding-bottom: 2.5rem;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+
+  .hero-bottom {
+    height: 60svh;
   }
 }

@@ -1,6 +1,6 @@
 .footer {
   position: relative;
-  width: 100vw;
+  width: 100%;
   background-color: var(--ivory-dim);
   padding: 5rem 0 2rem 0;
 }
@@ -43,6 +43,7 @@
   font-size: 0.9rem;
   color: var(--walnut);
   display: block;
+  overflow-wrap: anywhere;
   margin-bottom: 0.3rem;
   transition: color 0.3s ease;
 }
@@ -98,5 +99,29 @@
   .footer-bottom {
     flex-direction: column-reverse;
     gap: 0.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 3rem 0 1.25rem;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+
+  .footer-bottom p {
+    overflow-wrap: anywhere;
+  }
+
+  .footer-social-icons {
+    flex-wrap: wrap;
   }
 }

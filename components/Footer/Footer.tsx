@@ -34,13 +34,25 @@ const Footer = () => {
         <div className='footer-col footer-socials'>
           <p className='footer-label'>Follow along</p>
           <div className='footer-social-icons'>
-            <a href='#' aria-label='Facebook'>
+            <a
+              href='https://www.facebook.com/HeavenFurnitureMart'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Facebook'>
               <RiFacebookBoxLine />
             </a>
-            <a href='#' aria-label='Instagram'>
+            <a
+              href='https://www.instagram.com/heaven_furniture_ltd'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Instagram'>
               <RiInstagramLine />
             </a>
-            <a href='#' aria-label='YouTube'>
+            <a
+              href='https://www.youtube.com/@HeavenFurnitureMart'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='YouTube'>
               <RiYoutubeLine />
             </a>
           </div>

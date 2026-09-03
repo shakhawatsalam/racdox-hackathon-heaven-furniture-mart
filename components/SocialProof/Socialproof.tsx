@@ -41,7 +41,7 @@ const SocialProof = () => {
         <div className='social-proof-img' ref={imgWrapRef}>
           <img
             ref={imgRef}
-            src='/assets/about-cta-window.jpg'
+            src='/assets/managing-derictor.webp'
             alt='Heaven Furniture Mart showroom'
           />
         </div>

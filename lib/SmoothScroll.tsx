@@ -6,21 +6,26 @@ const SmoothScroll = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const isMobile = window.innerWidth <= 1000;
 
+    if (isMobile) return;
+
     const lenis = new Lenis({
-      duration: isMobile ? 0.9 : 1.15,
+      duration: 1.15,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: isMobile ? 1.5 : 2,
+      touchMultiplier: 2,
     });
+
+    let frameId: number;
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      frameId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    frameId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(frameId);
       lenis.destroy();
     };
   }, []);
