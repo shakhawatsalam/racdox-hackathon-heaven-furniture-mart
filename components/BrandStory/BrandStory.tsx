@@ -23,8 +23,8 @@ const BrandStory = () => {
   const img2WrapRef = useRef<HTMLDivElement>(null);
   const img2Ref = useRef<HTMLImageElement>(null);
 
-  const textLineRef = useRef<HTMLSpanElement>(null);
-  const textLine2Ref = useRef<HTMLSpanElement>(null);
+  const textLineRef = useRef<HTMLDivElement>(null);
+  const textLine2Ref = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -39,7 +39,7 @@ const BrandStory = () => {
       ScrollTrigger.create({
         trigger: stickyRef.current,
         start: "top top",
-        end: () => `+=${window.innerHeight * 6}`,
+        end: () => `+=${window.innerHeight * 3.5}`,
         pin: true,
         pinSpacing: true,
         onUpdate: (self) => {
