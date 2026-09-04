@@ -1,0 +1,254 @@
+.story-header {
+  position: relative;
+  width: 100vw;
+  background-color: var(--ink);
+  padding: 8rem 0 4rem 0;
+  text-align: center;
+}
+
+.story-header .container {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.story-eyebrow {
+  color: var(--brass);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.story-heading {
+  color: var(--ivory);
+  margin-bottom: 1.5rem;
+}
+
+.story-heading span {
+  color: var(--brass);
+  font-style: italic;
+}
+
+.story-subheading {
+  color: var(--ivory-70);
+}
+
+@media (max-width: 1000px) {
+  .story-header {
+    padding: 5rem 0 3rem 0;
+  }
+}
+
+.sticky-cols {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 0.5rem;
+  background-color: var(--ink);
+  overflow: hidden;
+}
+
+.sticky-cols-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.story-col {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  will-change: transform;
+}
+
+.story-col h2 {
+  color: var(--ivory-70);
+  width: 65%;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.story-col-1 h2 {
+  color: var(--ivory);
+  width: 80%;
+  font-size: clamp(2.5rem, 3.4vw, 4rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 2.25rem;
+}
+
+.story-col-1 h2 span {
+  color: var(--brass);
+  font-style: italic;
+}
+.story-col-3 h2 span {
+  color: var(--brass);
+  font-style: italic;
+}
+
+.story-col-1 h2::after,
+.story-col-3 h2::after {
+  content: "";
+  display: block;
+  width: 5.2rem;
+  margin-top: 1.75rem;
+  border-top: 2px solid var(--brass);
+}
+
+.story-col p {
+  color: var(--ivory-70);
+  width: 65%;
+  font-size: 1rem;
+}
+
+.story-col-1 p {
+  width: 80%;
+  max-width: 28rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.story-col-3 h2 {
+  color: var(--ivory);
+  width: 80%;
+  font-size: clamp(2.5rem, 3.4vw, 4rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 2.25rem;
+}
+
+.story-col-3 p {
+  width: 80%;
+  max-width: 28rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.story-col-2 {
+  transform: translateX(100%);
+}
+
+.story-col-3 {
+  transform: translateX(100%) translateY(100%);
+  padding: 0.5rem;
+}
+
+.story-col-4 {
+  transform: translateX(100%) translateY(100%);
+}
+
+.story-col-content,
+.story-col-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.story-col-content-wrapper,
+.story-col-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ink-soft);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.story-col-content-wrapper {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-col-content-wrapper-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-col-img-1,
+.story-col-img-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.story-col-img-2 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+.story-col-img-2 img {
+  transform: scale(1.25);
+}
+
+.story-col-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.story-line-mask {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-line {
+  display: block;
+  will-change: transform;
+}
+
+.story-mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .sticky-cols {
+    display: none;
+  }
+
+  .story-mobile {
+    display: block;
+    background-color: var(--ink);
+    padding: 5rem 0;
+  }
+
+  .story-mobile h2 {
+    color: var(--ivory);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .story-mobile p {
+    color: var(--ivory-70);
+    margin-bottom: 2.5rem;
+  }
+
+  .story-mobile-img {
+    aspect-ratio: 4/3;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--ink-soft);
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .story-header,
+  .sticky-cols,
+  .story-mobile {
+    display: none;
+  }
+}
