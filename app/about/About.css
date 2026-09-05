@@ -1,0 +1,378 @@
+.about-page {
+  background: var(--ivory);
+  color: var(--walnut);
+}
+
+.about-hero {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: 9rem 0 5rem;
+}
+
+.about-hero-grid,
+.about-team-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.about-hero-copy {
+  padding: 1rem 0 0;
+}
+
+.about-eyebrow,
+.about-page .eyebrow {
+  color: var(--brass);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.75rem, 4vw, 4.25rem);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-description {
+  color: var(--ivory-70);
+  max-width: 31rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.about-hero-image,
+.about-team-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  aspect-ratio: 1.38;
+}
+
+.about-hero-image img,
+.about-team-image img {
+  object-fit: cover;
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2.75rem;
+}
+
+.about-pillar {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0 1.1rem;
+  border-right: 1px solid rgba(244, 241, 234, 0.18);
+}
+
+.about-pillar:first-child {
+  padding-left: 0;
+}
+
+.about-pillar:last-child {
+  border-right: 0;
+}
+
+.about-pillar > span,
+.about-value > span {
+  color: var(--brass);
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.about-pillar h3 {
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.about-pillar p {
+  color: var(--ivory-70);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.about-team {
+  padding: 6rem 0;
+  background: var(--ivory-dim);
+}
+
+.about-team-copy {
+  max-width: 26rem;
+}
+
+.about-team-copy h2 {
+  font-size: clamp(2rem, 2.8vw, 2.75rem);
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.about-team-copy > p:not(.eyebrow) {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.about-outline-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--brass);
+  color: var(--brass);
+  padding: 0.85rem 1.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 3rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-outline-button:hover {
+  background-color: var(--brass);
+  color: var(--ink);
+}
+
+.about-values {
+  padding: 6rem 0;
+  background: var(--ivory);
+}
+
+.about-values > .container > .eyebrow {
+  margin-bottom: 2.5rem;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.about-value {
+  padding: 0 1.75rem;
+  border-right: 1px solid rgba(74, 59, 49, 0.16);
+}
+
+.about-value:first-child {
+  padding-left: 0;
+}
+
+.about-value:last-child {
+  border-right: 0;
+}
+
+.about-value h3 {
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin: 1rem 0 0.5rem;
+}
+
+.about-value p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--walnut);
+}
+
+.about-journey {
+  padding: 6rem 0 7rem;
+  background: var(--ivory-dim);
+}
+
+.about-journey h2 {
+  font-size: clamp(2rem, 2.8vw, 2.75rem);
+  margin-bottom: 3rem;
+  color: var(--ink);
+}
+
+.about-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(74, 59, 49, 0.18);
+  margin-bottom: 3.5rem;
+}
+
+.about-milestone {
+  position: relative;
+  padding: 1.5rem 1.25rem 0 0;
+}
+
+.about-dot {
+  position: absolute;
+  top: -0.3rem;
+  left: 0;
+  width: 0.65rem;
+  height: 0.65rem;
+  background: var(--brass);
+  border-radius: 50%;
+}
+
+.about-year {
+  color: var(--brass);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.about-milestone h3 {
+  color: var(--ink);
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.about-milestone > p:last-child {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  max-width: 12rem;
+  color: var(--walnut);
+}
+
+.about-cta {
+  padding: 2rem 2.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--ink);
+  border-radius: 1.25rem;
+  color: var(--ivory);
+}
+
+.about-cta > svg {
+  color: var(--brass);
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.about-cta h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.about-cta p {
+  color: var(--ivory-70);
+  font-size: 0.95rem;
+}
+
+.about-cta a {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brass);
+  color: var(--ink);
+  padding: 0.9rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 3rem;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-cta a:hover {
+  background-color: var(--ivory);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 800px) {
+  .about-hero {
+    padding-top: 6.5rem;
+  }
+
+  .about-hero-grid,
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-hero-image {
+    order: -1;
+  }
+
+  .about-pillars {
+    gap: 1.25rem;
+  }
+
+  .about-pillar {
+    padding: 0 0.6rem;
+    flex-direction: column;
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 0;
+  }
+
+  .about-value:nth-child(2) {
+    border-right: 0;
+  }
+
+  .about-value:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .about-timeline {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    border-top: 0;
+    border-left: 1px solid rgba(74, 59, 49, 0.18);
+    padding-left: 1.5rem;
+  }
+
+  .about-dot {
+    left: -0.34rem;
+    top: 1.5rem;
+  }
+
+  .about-milestone {
+    padding-top: 0;
+  }
+
+  .about-milestone > p:last-child {
+    max-width: none;
+  }
+
+  .about-cta {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1.75rem;
+  }
+
+  .about-cta a {
+    margin-left: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .about-pillar,
+  .about-pillar:first-child {
+    flex-direction: row;
+    padding: 0;
+    border-right: 0;
+  }
+
+  .about-hero-image,
+  .about-team-image {
+    aspect-ratio: 1.2;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-value,
+  .about-value:nth-child(3) {
+    padding: 0;
+    border-right: 0;
+  }
+}

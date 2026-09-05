@@ -3,15 +3,21 @@ import "./Nav.css";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Collections", href: "#collections" },
-  { label: "Bespoke", href: "#bespoke" },
-  { label: "Our Story", href: "#milestones" },
-  { label: "Contact", href: "#cta" },
+  { label: "Collections", href: "/#collections" },
+  { label: "Bespoke", href: "/#bespoke" },
+  { label: "Our Story", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
-const PRIMARY_LINKS = ["Home", "Gallery", "Contact Us", "About Us"];
+const PRIMARY_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "About Us", href: "/about" },
+];
 const SECONDARY_LINKS = [
   "Playground",
   "Build Something",
@@ -148,7 +154,7 @@ const Nav = () => {
     <>
       <nav className={`nav ${scrolled ? "nav-scrolled" : ""}`}>
         <div className='container nav-inner'>
-          <a href='#hero' className='nav-logo'>
+          <Link href='/' className='nav-logo'>
             <Image
               src='/assets/logo.webp'
               alt='Heaven Furniture Mart Logo'
@@ -156,7 +162,7 @@ const Nav = () => {
               height={100}
               loading='eager'
             />
-          </a>
+          </Link>
 
           <div className='nav-links'>
             {NAV_LINKS.map((link) => (
@@ -227,12 +233,12 @@ const Nav = () => {
 
           <div className='nav-items-col'>
             <div className='nav-primary-links' ref={primaryRef}>
-              {PRIMARY_LINKS.map((label) => (
-                <a href='#' key={label}>
+              {PRIMARY_LINKS.map((link) => (
+                <Link href={link.href} key={link.label}>
                   <span className='nav-link-mask'>
-                    <span className='nav-link-line'>{label}</span>
+                    <span className='nav-link-line'>{link.label}</span>
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
 
