@@ -106,7 +106,7 @@ export default function AboutPage() {
             </div>
             <div className='about-hero-image'>
               <Image
-                src='/assets/about-cta-window.webp'
+                src='/assets/showroomImage03.webp'
                 alt='Bespoke wood furniture in an arched interior'
                 fill
                 priority
