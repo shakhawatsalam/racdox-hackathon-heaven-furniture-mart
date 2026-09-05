@@ -1,5 +1,6 @@
 import BespokeHighlight from "@/components/BespokeHighlight/BespokeHighlight";
 import BrandIntro from "@/components/Brandintro/Brandintro";
+import BrandStory from "@/components/BrandStory/BrandStory";
 import CollectionsSnapshot from "@/components/CollectionCard/CollectionsSnapshot";
 import CTAWindow from "@/components/Ctawindow/Ctawindow";
 import Footer from "@/components/Footer/Footer";
@@ -19,6 +20,7 @@ export default function Home() {
         <WhyHeaven />
         <CollectionsSnapshot />
         <BespokeHighlight />
+        <BrandStory />
         <SocialProof />
         <Milestones />
         <CTAWindow />
