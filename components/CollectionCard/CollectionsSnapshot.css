@@ -32,11 +32,11 @@
 
 .collection-fan-card {
   position: absolute;
-  top: 50%;
+  top: calc(50% + clamp(2.5rem, 7vh, 5rem));
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 340px;
-  height: 540px;
+  height: clamp(360px, 58vh, 480px);
+  aspect-ratio: 17 / 27;
   perspective: 1200px;
 }
 
@@ -154,10 +154,9 @@
   margin-bottom: 2.5rem;
 }
 
-@media (min-width: 1001px) and (max-width: 1200px) {
+@media (min-width: 1001px) and (max-height: 800px) {
   .collection-fan-card {
-    width: 220px;
-    height: 340px;
+    height: clamp(320px, 52vh, 400px);
   }
 }
 
