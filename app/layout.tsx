@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "@/lib/SmoothScroll";
 import PageReveal from "@/components/PageReveal/PageReveal";
+import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "Heaven Furniture Mart | Designed. Crafted. Customized.",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
       <body>
+        <ScrollProgress />
         <SmoothScroll>
           <PageReveal>{children}</PageReveal>
         </SmoothScroll>

@@ -1,0 +1,11 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 0;
+  height: 3px;
+  pointer-events: none;
+  background-color: var(--brass);
+  transform: translateZ(0);
+}
