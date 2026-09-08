@@ -20,6 +20,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <SmoothScroll>
           <PageReveal>{children}</PageReveal>
         </SmoothScroll>
+        <div className='bottom-blur' aria-hidden='true'>
+          <div className='bottom-blur-layer bottom-blur-layer-soft' />
+          <div className='bottom-blur-layer bottom-blur-layer-medium' />
+          <div className='bottom-blur-layer bottom-blur-layer-strong' />
+        </div>
       </body>
     </html>
   );

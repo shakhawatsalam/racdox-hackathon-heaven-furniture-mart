@@ -4,7 +4,7 @@
   width: 100%;
   background-color: var(--ink);
   color: var(--ivory);
-  padding: 5.5rem 0 1.5rem;
+  padding: 5.5rem 0 1.9rem;
 }
 
 .footer-container {
@@ -147,10 +147,9 @@
 
 .footer-content {
   display: grid;
-  grid-template-columns: minmax(12rem, 1.7fr) repeat(
-      3,
-      minmax(8rem, 1fr)
-    ) minmax(15rem, 1.5fr);
+  grid-template-columns:
+    minmax(12rem, 1.7fr) repeat(3, minmax(8rem, 1fr))
+    minmax(15rem, 1.5fr);
   gap: 2.5rem;
   padding: 4rem 0 4.5rem;
 }
@@ -287,7 +286,9 @@
   justify-content: space-between;
   gap: 1rem;
   padding-top: 1.35rem;
+  margin-bottom: 6rem;
   border-top: 1px solid rgba(244, 241, 234, 0.2);
+  /* border: 1px solid red; */
 }
 
 .footer-bottom p,
