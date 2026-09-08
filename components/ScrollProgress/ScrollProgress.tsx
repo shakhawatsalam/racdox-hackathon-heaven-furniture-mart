@@ -17,7 +17,9 @@ const ScrollProgress = () => {
       const scrollableHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const progress =
-        scrollableHeight > 0 ? Math.min(window.scrollY / scrollableHeight, 1) : 0;
+        scrollableHeight > 0
+          ? Math.min(window.scrollY / scrollableHeight, 1)
+          : 0;
 
       progressRef.current.style.width = `${progress * 100}%`;
     };
@@ -39,7 +41,9 @@ const ScrollProgress = () => {
     };
   }, []);
 
-  return <div className='scroll-progress' ref={progressRef} aria-hidden='true' />;
+  return (
+    <div className='scroll-progress' ref={progressRef} aria-hidden='true' />
+  );
 };
 
 export default ScrollProgress;
